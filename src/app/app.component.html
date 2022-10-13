@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="card mt-5" style="align-items:center">
+<h2>Phone Directory</h2>
+  </div>
+</div>
+<div class="card">
+  <form [formGroup]="userForm" name="userForm">
+    <div class="mt-2 box">
+      <div class="form-row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>First Name:</label>
+          </div>
+          <div class="'form-row">
+            <div class="col">
+              <input type='text' formControlName='fname' class='form-control' placeholder="First name">
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Last Name:</label>
+          </div>
+          <div class="'form-row">
+            <div class="col">
+              <input type='text' formControlName='lname' class='form-control' placeholder="Last name">
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Phone No:</label>
+          </div>
+          <div class="'form-row">
+            <div class="col">
+              <input type='text' formControlName='phone_No' class='form-control' placeholder="Phone No">
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Email Address:</label>
+          </div>
+          <div class="'form-row">
+            <div class="col">
+              <input type='text' formControlName='email' class='form-control' placeholder="Email Address">
+            </div>
+          </div>
+
+        </div><br/>
+        <div>
+          <button type="button" class="btn btn-primary new" (click)="adddata()">Submit</button>
+        </div>
+        <!-- <div class="form-row mt-4">
+          <div class="col-md-6">
+            <button type="button" class="btn btn-primary" (click)="edit()">Edit</button>&nbsp;
+            <button type="button" class="btn btn-primary" (click)="reset()">Remove</button>
+
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+  </form>
+  <div class="col-md-8 mt-4 mb-4">
+    <div class="card">
+      <div><button type='button' class='btn btn-primary new2' (click)='removeall()'>Delete All</button></div>
+    <table class="table table-bordered">
+      <thead>
+      
+        <tr>
+          <th>S.No</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Phone No</th>
+          <th>Email</th>
+          <th></th>
+          <th></th>          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of data">
+          <td><span>{{i.fname}}</span></td>
+          <td><span>{{i.lname}}</span></td>
+          <td><span>{{i.phone_No}}</span></td>
+          <td><span>{{i.email}}</span></td>
+          <td><button type='button' class='btn btn-primary' (click)="remove(i)">Remove</button></td>
+          <td><button type='button' class='btn btn-primary' (click)="edit(userForm)">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
